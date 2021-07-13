@@ -1,5 +1,6 @@
 s = "babad"
 # output must be "bab" or "aba"
+# need to fix, works with all examples but doesn't work with sublevel
 
 def cycle(s):
     x = [char for char in s]
