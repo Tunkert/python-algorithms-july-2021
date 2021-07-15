@@ -1,8 +1,25 @@
 import math
 
-a = 4
-b = 3
-c = 8
+while True:
+    try:
+        a = int(input("What is the value of a? "))
+        break
+    except:
+        print("You must enter an integer.")
+
+while True:
+    try:
+        b = int(input("What is the value of b? "))
+        break
+    except:
+        print("You must enter an integer.")
+
+while True:
+    try:
+        c = int(input("What is the value of c? "))
+        break
+    except:
+        print("You must enter an integer.")
 
 def quadratic_formula(a, b, c):
     if b * b - 4 * a * c >= 0:
@@ -13,6 +30,6 @@ def quadratic_formula(a, b, c):
         ans_str = "There are no real solutions to this equation."
     return ans_str
 
-solution = quadratic_formula(1, -7, 10)
+solution = quadratic_formula(a, b, c)
 
 print(solution)
