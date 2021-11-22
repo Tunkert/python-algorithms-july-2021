@@ -8,8 +8,8 @@ class SimpleIntegral:
         self.exponent = exponent
 
     def value_integral(self):
-        upper_value = ((self.upper_range) ** (self.exponent - 1)) / (self.exponent - 1)
-        lower_value = ((self.lower_range) ** (self.exponent - 1)) / (self.exponent - 1)
+        upper_value = ((self.upper_range) ** (self.exponent + 1)) / (self.exponent + 1)
+        lower_value = ((self.lower_range) ** (self.exponent + 1)) / (self.exponent + 1)
         value = upper_value - lower_value
         return value
 
@@ -23,6 +23,26 @@ simple_integral_file = open("simple-integral.tex", "a")
 simple_integral_spanish_file = open("simple-integral-spanish.tex", "a")
 simple_integral_sol_file = open("simple-integral-sol.tex", "a")
 simple_integral_sol_spanish_file = open("simple-integral-sol-spanish.tex", "a")
+
+simple_integral_file.write(r"\documentclass{article}")
+simple_integral_spanish_file.write(r"\documentclass{article}")
+simple_integral_sol_file.write(r"\documentclass{article}")
+simple_integral_sol_spanish_file.write(r"\documentclass{article}")
+
+simple_integral_file.write("\n\n")
+simple_integral_spanish_file.write("\n\n")
+simple_integral_sol_file.write("\n\n")
+simple_integral_sol_spanish_file.write("\n\n")
+
+simple_integral_file.write(r"\begin{document}")
+simple_integral_spanish_file.write(r"\begin{document}")
+simple_integral_sol_file.write(r"\begin{document}")
+simple_integral_sol_spanish_file.write(r"\begin{document}")
+
+simple_integral_file.write("\n\n")
+simple_integral_spanish_file.write("\n\n")
+simple_integral_sol_file.write("\n\n")
+simple_integral_sol_spanish_file.write("\n\n")
 
 for problem in range(1, 101):
     lower_range = random.choice(random_num_list)
@@ -56,6 +76,11 @@ for problem in range(1, 101):
     simple_integral_spanish_file.write("\n\n")
     simple_integral_sol_file.write(f"Solution: {new_problem.value_integral()}\n\n")
     simple_integral_sol_spanish_file.write(f"Solucion: {new_problem.value_integral()}\n\n")
+
+simple_integral_file.write(r"\end{document}")
+simple_integral_spanish_file.write(r"\end{document}")
+simple_integral_sol_file.write(r"\end{document}")
+simple_integral_sol_spanish_file.write(r"\end{document}")
 
 simple_integral_file.close()
 simple_integral_spanish_file.close()
